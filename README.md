@@ -1,127 +1,169 @@
 # Disney Data Analytics Portfolio
 
-A comprehensive data science portfolio showcasing analytics projects focused on Disney's various business segments.
+A comprehensive data analysis project focusing on Disney movies and theme parks, featuring data collection, processing, analysis, and visualization. Part of a larger data science portfolio.
 
-## 🎯 Projects
+## Project Overview
 
-### 1. Disney+ Content Analysis
-- Streaming content analysis
-- Viewer engagement metrics
-- Content recommendation system
-- Genre and rating distribution
+This project combines multiple data sources to provide insights into Disney's entertainment ecosystem:
+- Movie data from TMDB API
+- Theme park data from ThemeParks API
+- Interactive visualizations using D3.js
+- Data analysis using Python and Jupyter notebooks
 
-### 2. Theme Park Optimization
-- Wait time analysis
-- Crowd prediction models
-- Attraction popularity metrics
-- Seasonal trend analysis
+## Features
 
-### 3. Entertainment Analytics
-- Box office performance analysis
-- Movie success factors
-- Revenue prediction models
-- Franchise performance metrics
+- **Movie Analysis**
+  - Box office performance tracking
+  - Genre distribution analysis
+  - Popularity and rating trends
+  - Cast and crew analysis
 
-## 🛠️ Technical Architecture
+- **Theme Park Analytics**
+  - Real-time wait time tracking
+  - Attraction popularity analysis
+  - Park operation patterns
+  - Visitor trend analysis
 
-### Data Collection
-- Automated data collection pipelines
-- API integrations (TMDB, Theme Parks API)
-- Data validation and quality checks
-- Scheduled updates
-
-### Processing & Analysis
-- Python data processing scripts
-- Statistical analysis
-- Machine learning models
-- Jupyter notebooks for analysis
-
-### Visualization & Reporting
-- Interactive dashboards
-- Real-time metrics
-- Custom visualization components
-- Automated reporting
-
-## 🚀 Getting Started
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Jmedina008/Disney-Data-Analytics.git
-   cd Disney-Data-Analytics
-   ```
-
-2. **Set Up Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Configure API Keys**
-   - Create a `.env` file
-   - Add required API keys (see `.env.example`)
-
-4. **Run Data Collection**
-   ```bash
-   python scripts/data_collection/collect_data.py
-   ```
-
-5. **View Analysis**
-   - Open Jupyter notebooks in `notebooks/` directory
-   - Run analysis scripts in `scripts/analytics/`
-
-## 📊 Project Structure
+## Project Structure
 
 ```
+.
 ├── data/
-│   ├── raw/          # Raw data from APIs
-│   ├── processed/    # Cleaned and processed data
-│   └── analytics/    # Analysis results
+│   ├── raw/
+│   │   ├── disney_plus/      # Movie data from TMDB
+│   │   ├── box_office/       # Box office performance data
+│   │   └── theme_parks/      # Theme park data
+│   └── processed/
+│       ├── disney_plus/      # Processed movie data
+│       └── theme_parks/      # Processed park data
 ├── notebooks/
-│   ├── disney_plus/
-│   ├── theme_parks/
-│   └── entertainment/
-├── scripts/
-│   ├── data_collection/
-│   ├── analytics/
-│   ├── monitoring/
-│   └── deployment/
-└── reports/
-    └── data_quality/
+│   └── disney_plus/
+│       └── analysis/
+│           └── movie_analysis.ipynb
+├── portfolio/
+│   └── website/
+│       └── app/
+│           └── components/
+│               └── visualizations/
+│                   ├── MovieAnalytics.tsx
+│                   ├── BoxOfficeChart.tsx
+│                   ├── WaitTimePrediction.tsx
+│                   └── StreamingTrendsChart.tsx
+└── scripts/
+    └── data_collection/
+        ├── tmdb_collector.py
+        ├── box_office_collector.py
+        ├── theme_park_collector.py
+        ├── process_movies.py
+        └── process_theme_parks.py
 ```
 
-## 🔧 Technologies Used
+## Data Collection
 
-- **Languages**: Python, SQL, TypeScript
-- **Data Processing**: Pandas, NumPy
-- **Analysis**: Scikit-learn, SciPy
-- **Visualization**: Plotly, D3.js
-- **Web Framework**: FastAPI, Next.js
-- **Database**: PostgreSQL
-- **Infrastructure**: Docker, GitHub Actions
+The project collects data from multiple sources:
 
-## 📈 Features
+1. **Movie Data (TMDB API)**
+   - Basic movie information
+   - Cast and crew details
+   - Ratings and popularity metrics
 
-- Real-time data collection
-- Automated quality checks
-- Interactive visualizations
-- API key management
-- Scheduled reports
-- Performance monitoring
+2. **Box Office Data**
+   - Revenue and budget information
+   - Theater release information
+   - Performance metrics
 
-## 🤝 Contributing
+3. **Theme Park Data**
+   - Attraction details
+   - Wait times
+   - Park operating hours
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Analysis Components
 
-## 📝 License
+1. **Movie Analysis**
+   - Box office performance trends
+   - Genre popularity over time
+   - Rating distribution
+   - Cast and crew network analysis
+
+2. **Theme Park Analysis**
+   - Peak hours identification
+   - Attraction popularity patterns
+   - Seasonal trends
+   - Capacity optimization insights
+
+## Visualizations
+
+The project includes interactive visualizations built with D3.js:
+- Revenue charts
+- Genre distribution
+- Rating vs. Popularity scatter plots
+- Theme park wait time heatmaps
+
+## Setup and Usage
+
+1. Clone the repository and install dependencies:
+```bash
+git clone <repository-url>
+cd disney-data-analytics
+pip install -r requirements.txt
+```
+
+2. Set up environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+3. Collect data:
+```bash
+python scripts/data_collection/tmdb_collector.py
+python scripts/data_collection/theme_park_collector.py
+```
+
+4. Process data:
+```bash
+python scripts/data_collection/process_movies.py
+python scripts/data_collection/process_theme_parks.py
+```
+
+5. Run analysis:
+```bash
+jupyter notebook notebooks/disney_plus/analysis/movie_analysis.ipynb
+```
+
+## Technologies Used
+
+- **Data Collection & Processing**
+  - Python
+  - pandas
+  - NumPy
+  - requests
+
+- **Analysis**
+  - Jupyter Notebook
+  - matplotlib
+  - seaborn
+  - scikit-learn
+
+- **Visualization**
+  - D3.js
+  - React/TypeScript
+  - Framer Motion
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📧 Contact
+## Acknowledgments
 
-For any questions or feedback, please reach out through:
-- GitHub Issues
-- [Your Contact Information]
+- TMDB API for movie data
+- ThemeParks API for park data
+- Disney for creating amazing entertainment experiences
+
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Project Link: [https://github.com/yourusername/disney-data-analytics](https://github.com/yourusername/disney-data-analytics)
 
 ---
 *"All our dreams can come true if we have the courage to pursue them." - Walt Disney*
