@@ -1,64 +1,127 @@
-# Disney-Inspired Data Science Portfolio 🏰✨
+# Disney Data Analytics Portfolio
 
-Welcome to my magical world of data science! This portfolio is a tribute to Disney's innovation and storytelling, showcasing how data science can bring even more wonder to the entertainment industry.
+A comprehensive data science portfolio showcasing analytics projects focused on Disney's various business segments.
 
-## 🌟 Projects
+## 🎯 Projects
 
 ### 1. Disney+ Content Analysis
-- Streaming content performance analysis
-- Viewer behavior patterns
+- Streaming content analysis
+- Viewer engagement metrics
 - Content recommendation system
+- Genre and rating distribution
 
 ### 2. Theme Park Optimization
-- Queue time prediction
-- Visitor flow optimization
-- Attraction popularity analysis
+- Wait time analysis
+- Crowd prediction models
+- Attraction popularity metrics
+- Seasonal trend analysis
 
-### 3. Character Recognition AI
-- Deep learning model for Disney character recognition
-- Image classification and detection
-- Character similarity analysis
+### 3. Entertainment Analytics
+- Box office performance analysis
+- Movie success factors
+- Revenue prediction models
+- Franchise performance metrics
 
-### 4. Box Office Prediction
-- Movie success prediction model
-- Feature importance analysis
-- Revenue forecasting
+## 🛠️ Technical Architecture
 
-### 5. Social Media Sentiment Analysis
-- Real-time brand sentiment tracking
-- Customer feedback analysis
-- Trend identification
+### Data Collection
+- Automated data collection pipelines
+- API integrations (TMDB, Theme Parks API)
+- Data validation and quality checks
+- Scheduled updates
 
-## 🛠 Technologies Used
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- TensorFlow/PyTorch
-- Streamlit
-- FastAPI
-- React
-- PostgreSQL
+### Processing & Analysis
+- Python data processing scripts
+- Statistical analysis
+- Machine learning models
+- Jupyter notebooks for analysis
 
-## 🎨 Website Design
-This portfolio website is inspired by the classic Disney Channel website, featuring:
-- Interactive wand animation effects
-- Nostalgic UI elements
-- Modern data visualizations
-- Responsive design
+### Visualization & Reporting
+- Interactive dashboards
+- Real-time metrics
+- Custom visualization components
+- Automated reporting
 
-## 📊 Skills Demonstrated
-- Data Analysis & Visualization
-- Machine Learning
-- Deep Learning
-- Natural Language Processing
-- Time Series Analysis
-- Web Development
-- Database Management
+## 🚀 Getting Started
 
-## 🔗 Contact
-- GitHub: [Your GitHub]
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Jmedina008/Disney-Data-Analytics.git
+   cd Disney-Data-Analytics
+   ```
+
+2. **Set Up Environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. **Configure API Keys**
+   - Create a `.env` file
+   - Add required API keys (see `.env.example`)
+
+4. **Run Data Collection**
+   ```bash
+   python scripts/data_collection/collect_data.py
+   ```
+
+5. **View Analysis**
+   - Open Jupyter notebooks in `notebooks/` directory
+   - Run analysis scripts in `scripts/analytics/`
+
+## 📊 Project Structure
+
+```
+├── data/
+│   ├── raw/          # Raw data from APIs
+│   ├── processed/    # Cleaned and processed data
+│   └── analytics/    # Analysis results
+├── notebooks/
+│   ├── disney_plus/
+│   ├── theme_parks/
+│   └── entertainment/
+├── scripts/
+│   ├── data_collection/
+│   ├── analytics/
+│   ├── monitoring/
+│   └── deployment/
+└── reports/
+    └── data_quality/
+```
+
+## 🔧 Technologies Used
+
+- **Languages**: Python, SQL, TypeScript
+- **Data Processing**: Pandas, NumPy
+- **Analysis**: Scikit-learn, SciPy
+- **Visualization**: Plotly, D3.js
+- **Web Framework**: FastAPI, Next.js
+- **Database**: PostgreSQL
+- **Infrastructure**: Docker, GitHub Actions
+
+## 📈 Features
+
+- Real-time data collection
+- Automated quality checks
+- Interactive visualizations
+- API key management
+- Scheduled reports
+- Performance monitoring
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+
+For any questions or feedback, please reach out through:
+- GitHub Issues
+- [Your Contact Information]
 
 ---
-*"All our dreams can come true if we have the courage to pursue them." - Walt Disney* 
+*"All our dreams can come true if we have the courage to pursue them." - Walt Disney*
