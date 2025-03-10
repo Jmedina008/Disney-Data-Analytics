@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-green-600">{{ title }}</h1>
+            <p class="text-gray-600">Generated on {{ date }}</p>
+        </header>
+
+        {% for park, insights in park_insights.items() %}
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">{{ park }} Analysis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Current Insights</h3>
+                    <div class="prose">
+                        {{ insights | safe }}
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Wait Time Patterns</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/{{ park }}_wait_times.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-medium mb-3">Wait Time Forecast</h3>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="{{ viz_path }}/{{ park }}_forecast.html" class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+
+        <section class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Cross-Park Analysis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Peak Times Comparison</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/peak_times_comparison.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Crowd Level Patterns</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/crowd_patterns.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 

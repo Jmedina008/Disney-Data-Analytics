@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-purple-600">{{ title }}</h1>
+            <p class="text-gray-600">Generated on {{ date }}</p>
+        </header>
+
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Financial Performance</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Key Metrics</h3>
+                    <div class="prose">
+                        {{ financial_insights | safe }}
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Revenue Trends</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/revenue_trends.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Franchise Performance</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Franchise Analysis</h3>
+                    <div class="prose">
+                        {{ franchise_insights | safe }}
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Franchise Comparison</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/franchise_performance.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Performance Analysis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">ROI Distribution</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/roi_distribution.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Success Factors</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="{{ viz_path }}/success_factors.html" class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
