@@ -1,181 +1,127 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Link from 'next/link'
+import { MovieAnalytics } from './components/visualizations/MovieAnalytics'
+import { BoxOfficeChart } from './components/visualizations/BoxOfficeChart'
+import { WaitTimePrediction } from './components/visualizations/WaitTimePrediction'
 
 export default function Home() {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  }
+
+  const features = [
+    {
+      title: 'Movie Analytics',
+      description: 'Deep dive into Disney movie performance, genres, and trends',
+      icon: '🎬',
+      href: '/projects/movies'
+    },
+    {
+      title: 'Theme Park Insights',
+      description: 'Real-time wait times and crowd prediction analytics',
+      icon: '🎡',
+      href: '/projects/theme-parks'
+    },
+    {
+      title: 'Streaming Trends',
+      description: 'Disney+ content analysis and viewer engagement metrics',
+      icon: '📺',
+      href: '/projects/streaming'
+    }
+  ]
+
   return (
-    <div className="animate-fade-in">
+    <div className="space-y-24 pb-16">
       {/* Hero Section */}
-      <section className="relative h-screen">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/disney-castle.jpg"
-            alt="Disney Castle"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative flex h-full items-center justify-center text-white">
+      <section className="relative pt-32">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={fadeIn}
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
           <div className="text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="font-display text-5xl font-bold sm:text-6xl md:text-7xl"
-            >
-              Disney Data Science
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 text-xl sm:text-2xl"
-            >
-              Exploring the Magic Through Data
-            </motion.p>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+              Disney Data Analytics
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Exploring the magic of Disney through data science, from box office performance to theme park operations.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link
+                href="/projects"
+                className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                View Projects
+              </Link>
+              <Link
+                href="/about"
+                className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100"
+              >
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Projects Overview */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-bold text-disney-blue sm:text-4xl">
-            Featured Projects
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Disney+ Content Analysis */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="overflow-hidden rounded-lg bg-white shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src="/images/disney-plus.jpg"
-                  alt="Disney+"
-                  fill
-                  className="object-cover"
-                />
+      {/* Features Section */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={fadeIn}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {features.map((feature) => (
+            <Link key={feature.title} href={feature.href}>
+              <div className="group relative rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+                <div className="text-4xl">{feature.icon}</div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">{feature.description}</p>
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-disney-gray">
-                  Disney+ Content Analysis
-                </h3>
-                <p className="mt-2 text-disney-gray/80">
-                  Analyzing streaming trends and content performance on Disney+
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Theme Park Optimization */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="overflow-hidden rounded-lg bg-white shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src="/images/theme-park.jpg"
-                  alt="Theme Park"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-disney-gray">
-                  Theme Park Optimization
-                </h3>
-                <p className="mt-2 text-disney-gray/80">
-                  Optimizing park operations through data-driven insights
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Entertainment Analytics */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="overflow-hidden rounded-lg bg-white shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src="/images/entertainment.jpg"
-                  alt="Entertainment"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-disney-gray">
-                  Entertainment Analytics
-                </h3>
-                <p className="mt-2 text-disney-gray/80">
-                  Analyzing box office trends and franchise performance
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+            </Link>
+          ))}
+        </motion.div>
       </section>
 
-      {/* Tech Stack */}
-      <section className="bg-disney-gray/5 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-bold text-disney-blue sm:text-4xl">
-            Technology Stack
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Frontend */}
-            <div className="rounded-lg bg-white p-6 shadow-lg">
-              <h3 className="font-display text-xl font-bold text-disney-gray">
-                Frontend
-              </h3>
-              <ul className="mt-4 space-y-2 text-disney-gray/80">
-                <li>Next.js 13</li>
-                <li>TailwindCSS</li>
-                <li>Framer Motion</li>
-                <li>Chart.js/D3.js</li>
-              </ul>
-            </div>
+      {/* Visualization Previews */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={fadeIn}
+          className="space-y-12"
+        >
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Interactive Visualizations
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+              Explore our data through beautiful, interactive charts and graphs
+            </p>
+          </div>
 
-            {/* Backend */}
-            <div className="rounded-lg bg-white p-6 shadow-lg">
-              <h3 className="font-display text-xl font-bold text-disney-gray">
-                Backend
-              </h3>
-              <ul className="mt-4 space-y-2 text-disney-gray/80">
-                <li>FastAPI</li>
-                <li>PostgreSQL</li>
-                <li>Redis</li>
-                <li>Docker</li>
-              </ul>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Box Office Performance</h3>
+              <BoxOfficeChart />
             </div>
-
-            {/* Data Science */}
-            <div className="rounded-lg bg-white p-6 shadow-lg">
-              <h3 className="font-display text-xl font-bold text-disney-gray">
-                Data Science
-              </h3>
-              <ul className="mt-4 space-y-2 text-disney-gray/80">
-                <li>Python</li>
-                <li>Pandas</li>
-                <li>NumPy</li>
-                <li>Scikit-learn</li>
-              </ul>
-            </div>
-
-            {/* APIs */}
-            <div className="rounded-lg bg-white p-6 shadow-lg">
-              <h3 className="font-display text-xl font-bold text-disney-gray">
-                APIs
-              </h3>
-              <ul className="mt-4 space-y-2 text-disney-gray/80">
-                <li>TMDB API</li>
-                <li>Weather API</li>
-                <li>Disney Parks API</li>
-              </ul>
+            <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Wait Time Predictions</h3>
+              <WaitTimePrediction />
             </div>
           </div>
-        </div>
+
+          <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+            <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Movie Analytics Overview</h3>
+            <MovieAnalytics />
+          </div>
+        </motion.div>
       </section>
     </div>
   )
