@@ -1,88 +1,73 @@
-# Disney Data Analytics Portfolio
+# 🏰 Disney Data Analytics Portfolio
 
-A comprehensive data analysis project focusing on Disney movies and theme parks, featuring data collection, processing, analysis, and visualization. Part of a larger data science portfolio.
+A comprehensive portfolio of Disney-themed data analytics projects, featuring advanced machine learning, revenue optimization, and guest experience analytics. From streaming content analysis to theme park operations and resort management.
 
-## Project Overview
+## 🎯 Portfolio Overview
 
-This project combines multiple data sources to provide insights into Disney's entertainment ecosystem:
-- Movie data from TMDB API
-- Box office performance data
-- Theme park data from ThemeParks API
-- Interactive visualizations using D3.js
-- Advanced statistical analysis using Python and Jupyter notebooks
+This portfolio showcases three distinct Disney analytics projects, each demonstrating different aspects of data science and business intelligence:
 
-## Features
+### 🏨 **NEW: Disney Resort Guest Experience & Revenue Analytics** 
+**Our newest and most comprehensive project** - A complete resort operations analytics pipeline featuring:
+- Advanced guest segmentation using machine learning
+- Revenue optimization models and dynamic pricing
+- Predictive analytics for guest satisfaction and spending
+- Interactive Streamlit dashboard for operations management
+- 25,000+ synthetic bookings across 9 Disney resort properties
 
-- **Movie Analysis**
-  - Box office performance tracking
-  - Genre distribution analysis
-  - Popularity and rating trends
-  - Cast and crew analysis
-  - Advanced statistical tests and predictive modeling
+### 🎬 Disney+ Content Analytics
+Streaming platform analysis with movie performance, genre trends, and content optimization insights.
 
-- **Theme Park Analytics**
-  - Real-time wait time tracking
-  - Attraction popularity analysis
-  - Park operation patterns
-  - Visitor trend analysis
-  - Seasonal decomposition of attendance data
+### 🎢 Theme Park Operations Optimization
+Data-driven analysis of park operations, visitor patterns, and attraction performance.
 
-- **Streaming Analytics**
-  - Content popularity metrics
-  - Viewer engagement analysis
-  - Platform performance indicators
-  - Content recommendation patterns
+## 🚀 Featured Projects
 
-## Project Structure
+### 🏨 [Disney Resort Analytics](projects/disney_resort_analytics/) - **⭐ FEATURED PROJECT**
+Complete resort operations analytics system with ML-driven insights:
+- **Guest Segmentation**: 7 distinct guest personas using K-means clustering
+- **Predictive Models**: Guest satisfaction (>85% accuracy) and spending prediction
+- **Revenue Optimization**: Dynamic pricing and occupancy forecasting
+- **Interactive Dashboard**: Comprehensive operations management interface
+- **Full Pipeline**: Automated data generation → analytics → optimization → visualization
+
+**Quick Start:**
+```bash
+cd projects/disney_resort_analytics/
+python run_analytics_pipeline.py  # Runs complete pipeline
+```
+
+### 🎬 [Disney+ Content Analytics](projects/disney_plus_analysis/)
+- Box office performance and genre analysis
+- Advanced statistical testing (t-tests, ANOVA, regression)
+- Content popularity and rating trends
+- Predictive modeling for movie success
+
+### 🎢 [Theme Park Optimization](projects/theme_park_optimization/)
+- Wait time analysis and prediction
+- Visitor flow optimization
+- Seasonal pattern analysis
+- Capacity planning insights
+
+## 📁 Portfolio Structure
 
 ```
-.
-├── data/
-│   ├── raw/
-│   │   ├── disney_plus/      # Movie data from TMDB
-│   │   ├── box_office/       # Box office performance data
-│   │   └── theme_parks/      # Theme park data
-│   └── processed/
-│       ├── disney_plus/      # Processed movie data
-│       └── theme_parks/      # Processed park data
-├── notebooks/
-│   ├── disney_plus/
-│   │   └── analysis/
-│   │       ├── movie_analysis.ipynb      # Comprehensive movie analysis with statistical tests
-│   │       ├── streaming_analytics.ipynb # Streaming platform analysis
-│   │       └── theme_park_analysis.ipynb # Theme park data analysis
-│   ├── entertainment/
-│   │   └── analysis/
-│   │       ├── franchise_analysis.ipynb  # Analysis of Disney franchises
-│   │       └── industry_analysis.ipynb   # Entertainment industry analysis
-│   └── theme_parks/
-│       └── analysis/
-│           └── theme_park_analysis.ipynb # Detailed theme park analysis
-├── portfolio/
-│   └── website/
-│       └── app/
-│           ├── components/
-│           │   ├── Footer.tsx
-│           │   ├── Navbar.tsx
-│           │   └── visualizations/
-│           │       ├── MovieAnalytics.tsx
-│           │       ├── BoxOfficeChart.tsx
-│           │       ├── WaitTimePrediction.tsx
-│           │       └── StreamingTrendsChart.tsx
-│           ├── layout.tsx
-│           └── page.tsx
-├── reports/
-│   ├── figures/              # Generated visualizations
-│   └── disney_movie_analysis_results.csv # Summary of analysis findings
-└── scripts/
-    ├── data_collection/
-    │   ├── tmdb_collector.py
-    │   ├── box_office_collector.py
-    │   ├── theme_park_collector.py
-    │   ├── process_movies.py
-    │   └── process_theme_parks.py
-    └── data_processing/
-        └── prepare_analysis_data.py
+disney-data-analytics/
+├── projects/
+│   ├── disney_resort_analytics/     # ⭐ FEATURED: Complete resort analytics pipeline
+│   │   ├── src/
+│   │   │   ├── resort_data_generator.py  # Synthetic data generation
+│   │   │   ├── guest_analytics.py        # ML guest segmentation
+│   │   │   ├── revenue_optimization.py   # Dynamic pricing models
+│   │   │   └── resort_dashboard.py       # Interactive Streamlit dashboard
+│   │   ├── run_analytics_pipeline.py # One-click pipeline execution
+│   │   └── README.md                 # Comprehensive project docs
+│   ├── disney_plus_analysis/        # Streaming content analytics
+│   └── theme_park_optimization/     # Park operations analysis
+├── notebooks/                       # Jupyter analysis notebooks
+├── data/                           # Shared datasets
+├── src/                            # Common utilities
+├── web/                            # Portfolio website
+└── scripts/                        # Data collection scripts
 ```
 
 ## Data Collection
@@ -155,75 +140,52 @@ Some notable insights from our analysis:
 - Theme park attendance shows strong correlation with movie release schedules
 - Viewer engagement on streaming platforms peaks during specific seasonal periods
 
-## Setup and Usage
+## 🚀 Quick Start
 
-1. Clone the repository and install dependencies:
+### Try the Featured Project (Disney Resort Analytics)
 ```bash
+# Clone the repository
 git clone https://github.com/Jmedina008/Disney-Data-Analytics.git
 cd Disney-Data-Analytics
-pip install -r requirements.txt
+
+# Run the complete resort analytics pipeline
+cd projects/disney_resort_analytics/
+python run_analytics_pipeline.py --install-deps
+
+# This will:
+# 1. Install dependencies automatically
+# 2. Generate 25,000+ synthetic resort bookings
+# 3. Run ML guest segmentation and predictive models
+# 4. Perform revenue optimization analysis
+# 5. Launch interactive dashboard at http://localhost:8501
 ```
 
-2. Set up environment variables:
+### Explore Other Projects
 ```bash
-cp .env.example .env
-# Edit .env with your API keys
+# Disney+ Content Analytics
+cd projects/disney_plus_analysis/
+jupyter notebook
+
+# Theme Park Optimization
+cd projects/theme_park_optimization/
+jupyter notebook
 ```
 
-3. Collect data:
-```bash
-python scripts/data_collection/tmdb_collector.py
-python scripts/data_collection/box_office_collector.py
-python scripts/data_collection/theme_park_collector.py
-```
+## 🛠️ Technologies Used
 
-4. Process data:
-```bash
-python scripts/data_collection/process_movies.py
-python scripts/data_collection/process_theme_parks.py
-```
+- **Machine Learning & Analytics**: Python, pandas, scikit-learn, numpy
+- **Visualization**: Streamlit, Plotly, matplotlib, seaborn
+- **Statistical Analysis**: scipy, statsmodels, hypothesis testing
+- **Web Development**: React, TypeScript, Next.js
+- **Data Processing**: Jupyter notebooks, synthetic data generation
 
-5. Run analysis:
-```bash
-jupyter notebook notebooks/disney_plus/analysis/movie_analysis.ipynb
-```
+## 🔮 What's Next
 
-## Technologies Used
-
-- **Data Collection & Processing**
-  - Python
-  - pandas
-  - NumPy
-  - requests
-  - pyarrow
-
-- **Analysis**
-  - Jupyter Notebook
-  - matplotlib
-  - seaborn
-  - scikit-learn
-  - scipy
-  - statsmodels
-
-- **Visualization**
-  - D3.js
-  - React/TypeScript
-  - Framer Motion
-
-- **Statistical Testing**
-  - Hypothesis testing (t-tests)
-  - ANOVA
-  - Multiple regression
-  - Time series analysis
-  - Chi-square tests
-
-## Future Enhancements
-
-- Implement machine learning models to predict movie success based on various features
-- Develop real-time dashboard for monitoring theme park wait times
-- Expand analysis to include competitor comparison
-- Create interactive web application for exploring the data
-- Integrate natural language processing for sentiment analysis of movie reviews
+- **Real-time Data Integration**: Connect resort analytics to live booking systems
+- **Advanced ML Models**: Implement deep learning for guest behavior prediction
+- **Mobile Dashboard**: React Native app for on-the-go resort management
+- **Competitive Analysis**: Expand to Universal Studios and other resort competitors
+- **Natural Language Processing**: Guest review sentiment analysis integration
 
 ## License
 
